@@ -1,5 +1,5 @@
 import { doc, setDoc } from "firebase/firestore"; 
-import { db } from "./client";
+import { db } from "../client";
 export const createTweet = async (userId: string, text: string) => {
   await setDoc(doc(db, "tweets", "tweet"), {
     text,

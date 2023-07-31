@@ -1,13 +1,12 @@
 "use client"
 
 
-import { Feed } from './components/Feed'
-import InputField from './components/Form/Input/Input'
-import { Form } from './components/Form'
-import { createTweet } from '@/api/createTweet'
+import { Feed } from '../app/components/Feed'
+import InputField from '../app/components/Form/Input/Input'
+import { Form } from '../app/components/Form'
+import { createTweet } from '@/api/tweets/createTweet'
 import { useEffect } from 'react'
-import { db } from '@/api/client'
-import { getTweets } from '@/api/getTweets'
+
 const tweets = [
   {
     id: 1,
@@ -37,16 +36,8 @@ const handleFormSubmit = async (values: any) => {
   await createTweet('1', tweet)
 }
 
-
 export default function Home() {
   
-  useEffect(() => {
-    const fetchTweets = async () => {
-      const firestore = await getTweets()
-      console.log(firestore)
-    }
-    fetchTweets()
-  },[])
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Feed tweets={tweets}/>

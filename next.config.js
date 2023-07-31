@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['pbs.twimg.com', 'images.unsplash.com', 'res.cloudinary.com', 'media.licdn.com'],
   },
+  dir: './src'
 }
 
 module.exports = nextConfig
